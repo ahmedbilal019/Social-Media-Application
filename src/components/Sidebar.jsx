@@ -1,68 +1,64 @@
 import React from "react";
 
-const Sidebar = () => {
+const Sidebar = ({ selectedTab, setSelectedTab }) => {
   return (
     <div
-      class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark"
+      className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark sidebar"
       style={{ width: "280px" }}
     >
       <a
         href="/"
-        class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+        className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
       >
-        <svg class="bi pe-none me-2" width="40" height="32">
-          <use Xlink:Href="#bootstrap"></use>
+        <svg className="bi pe-none me-2" width="40" height="32">
+          <use xlinkHref="#bootstrap"></use>
         </svg>
-        <span class="fs-4">Sidebar</span>
+        <span className="fs-4">Sidebar</span>
       </a>
       <hr></hr>
-      <ul class="nav nav-pills flex-column mb-auto">
-        <li class="nav-item">
-          <a href="#" class="nav-link active" aria-current="page">
-            <svg class="bi pe-none me-2" width="16" height="16">
-              <use Xlink:Href="#home"></use>
+      <ul className="nav nav-pills flex-column mb-auto">
+        <li
+          className="nav-item"
+          onClick={() => {
+            setSelectedTab("Home");
+          }}
+        >
+          <a
+            href="#"
+            className={`nav-link text-white ${
+              selectedTab === "Home" && "active"
+            }`}
+            aria-current="page"
+          >
+            <svg className="bi pe-none me-2" width="16" height="16">
+              <use xlinkHref="#home"></use>
             </svg>
             Home
           </a>
         </li>
-        <li>
-          <a href="#" class="nav-link text-white">
-            <svg class="bi pe-none me-2" width="16" height="16">
-              <use Xlink:Href="#speedometer2"></use>
+        <li
+          onClick={() => {
+            setSelectedTab("Create Post");
+          }}
+        >
+          <a
+            href="#"
+            className={`nav-link text-white ${
+              selectedTab === "Create Post" && "active"
+            }`}
+          >
+            <svg className="bi pe-none me-2" width="16" height="16">
+              <use xlinkHref="#speedometer2"></use>
             </svg>
-            Dashboard
-          </a>
-        </li>
-        <li>
-          <a href="#" class="nav-link text-white">
-            <svg class="bi pe-none me-2" width="16" height="16">
-              <use Xlink:Href="#table"></use>
-            </svg>
-            Orders
-          </a>
-        </li>
-        <li>
-          <a href="#" class="nav-link text-white">
-            <svg class="bi pe-none me-2" width="16" height="16">
-              <use Xlink:Href="#grid"></use>
-            </svg>
-            Products
-          </a>
-        </li>
-        <li>
-          <a href="#" class="nav-link text-white">
-            <svg class="bi pe-none me-2" width="16" height="16">
-              <use Xlink:Href="#people-circle"></use>
-            </svg>
-            Customers
+            Create Post
           </a>
         </li>
       </ul>
       <hr></hr>
-      <div class="dropdown">
+      <div className="dropdown">
         <a
           href="#"
-          class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+          className="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
@@ -71,31 +67,31 @@ const Sidebar = () => {
             alt=""
             width="32"
             height="32"
-            class="rounded-circle me-2"
+            className="rounded-circle me-2"
           ></img>
           <strong>mdo</strong>
         </a>
-        <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+        <ul className="dropdown-menu dropdown-menu-dark text-small shadow">
           <li>
-            <a class="dropdown-item" href="#">
+            <a className="dropdown-item" href="#">
               New project...
             </a>
           </li>
           <li>
-            <a class="dropdown-item" href="#">
+            <a className="dropdown-item" href="#">
               Settings
             </a>
           </li>
           <li>
-            <a class="dropdown-item" href="#">
+            <a className="dropdown-item" href="#">
               Profile
             </a>
           </li>
           <li>
-            <hr class="dropdown-divider"></hr>
+            <hr className="dropdown-divider"></hr>
           </li>
           <li>
-            <a class="dropdown-item" href="#">
+            <a className="dropdown-item" href="#">
               Sign out
             </a>
           </li>
