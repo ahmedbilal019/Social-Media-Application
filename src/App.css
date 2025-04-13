@@ -7,3 +7,11 @@
 .sidebar {
   min-height: 600px;
 }
+.post-card {
+  padding: 10px;
+  margin: 20px;
+}
+.badge {
+  margin: 4px;
+  padding: 7px;
+}
