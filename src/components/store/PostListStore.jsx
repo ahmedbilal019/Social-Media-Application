@@ -7,7 +7,11 @@ export const PostList = createContext({
 });
 // reducer function
 const postListReducer = (currPostList, action) => {
-  return currPostList;
+  let newPostList = currPostList;
+  if (action.type === "DELETE_POST") {
+    newPostList = currPostList.filter((post) => post.id !== action.payload.id);
+  }
+  return newPostList;
 };
 
 const PostListProvider = ({ children }) => {
@@ -16,7 +20,15 @@ const PostListProvider = ({ children }) => {
     DEFALT_POST_LIST
   );
   const addPost = () => {};
-  const deletePost = () => {};
+  const deletePost = (postId) => {
+    dispatchPostList({
+      type: "DELETE_POST",
+      payload: {
+        id: postId,
+      },
+    });
+    // console.log(`delete post is called for  : ${postId}`);
+  };
   return (
     <PostList.Provider
       value={{ postList: postList, addPost: addPost, deletePost: deletePost }}

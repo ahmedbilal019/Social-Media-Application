@@ -2,43 +2,68 @@ import React from "react";
 
 const CreatePost = () => {
   return (
-    <form>
+    <form className="createPost">
       <div className="mb-3">
-        <label htmlFor="exampleInputEmail1" className="form-label">
-          Email address
+        <label htmlFor="post_id" className="form-label">
+          Enter yor post ID:
         </label>
         <input
-          type="email"
+          type="text"
           className="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="emailHelp"
+          id=""
+          placeholder="e.g. 0,1,2"
         ></input>
-        <div id="emailHelp" className="form-text">
-          We'll never share your email with anyone else.
-        </div>
       </div>
       <div className="mb-3">
-        <label htmlFor="exampleInputPassword1" className="form-label">
-          Password
+        <label htmlFor="post_title" className="form-label">
+          Title of you post:
         </label>
         <input
-          type="password"
+          type="text"
           className="form-control"
-          id="exampleInputPassword1"
+          id=""
+          placeholder="write title for the post"
         ></input>
       </div>
-      <div className="mb-3 form-check">
-        <input
-          type="checkbox"
-          className="form-check-input"
-          id="exampleCheck1"
-        ></input>
-        <label className="form-check-label" htmlFor="exampleCheck1">
-          Check me out
+
+      <div className="mb-3">
+        <label htmlFor="post_content" className="form-label">
+          Write something About your post:
         </label>
+        <textarea
+          id=""
+          name=""
+          rows="4"
+          cols="50"
+          placeholder="write some text for your post "
+        ></textarea>
+      </div>
+
+      <div className="mb-3">
+        <label htmlFor="hashtags" className="form-label">
+          Hashtags#:
+        </label>
+        <input
+          type="text"
+          className="form-control"
+          id=""
+          placeholder="add some hashtags(#) to inhance post visiblity"
+        ></input>
+      </div>
+
+      <div className="mb-3">
+        <label htmlFor="hashtags" className="form-label">
+          Number of Reactions:
+        </label>
+        <input
+          type="number"
+          className="form-control"
+          id=""
+          placeholder="e.g. 0,1,2..."
+        ></input>
       </div>
       <button type="submit" className="btn btn-primary">
-        Submit
+        POST
       </button>
     </form>
   );
