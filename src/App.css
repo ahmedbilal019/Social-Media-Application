@@ -1,6 +1,9 @@
 .app-container {
   display: flex;
 }
+.Heading {
+  margin: -40px;
+}
 .content {
   width: 100%;
 }
@@ -9,7 +12,7 @@
 }
 .post-card {
   padding: 10px;
-  margin: 20px;
+  margin: 20px 40px;
 }
 .badge {
   margin: 4px;
