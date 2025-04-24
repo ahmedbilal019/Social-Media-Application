@@ -63,7 +63,7 @@ const CreatePost = () => {
           id="body"
           name=""
           rows="4"
-          cols="50"
+          cols="40"
           placeholder="write some text for your post "
         ></textarea>
       </div>
